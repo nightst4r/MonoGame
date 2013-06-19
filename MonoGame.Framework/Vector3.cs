@@ -30,6 +30,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 namespace Microsoft.Xna.Framework
 {
@@ -56,12 +57,15 @@ namespace Microsoft.Xna.Framework
         #region Public Fields
         
         [DataMember]
+        [XmlAttribute]
         public float X;
       
         [DataMember]
+        [XmlAttribute]
         public float Y;
       
         [DataMember]
+        [XmlAttribute]
         public float Z;
 
         #endregion Public Fields

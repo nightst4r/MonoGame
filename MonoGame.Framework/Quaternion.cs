@@ -27,6 +27,7 @@ SOFTWARE.
 
 using System;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 namespace Microsoft.Xna.Framework
 {
@@ -34,15 +35,19 @@ namespace Microsoft.Xna.Framework
     public struct Quaternion : IEquatable<Quaternion>
     {
         [DataMember]
+        [XmlAttribute()]
         public float X;
 
         [DataMember]
+        [XmlAttribute()]
         public float Y;
       
         [DataMember]
+        [XmlAttribute()]
         public float Z;
       
         [DataMember]
+        [XmlAttribute()]
         public float W;
 
         static Quaternion identity = new Quaternion(0, 0, 0, 1);
