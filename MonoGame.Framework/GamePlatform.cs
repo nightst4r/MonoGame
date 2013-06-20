@@ -99,7 +99,15 @@ namespace Microsoft.Xna.Framework
 #elif PSM
 			return new PSSGamePlatform(game);
 #elif WINDOWS && DIRECTX
-            return new MonoGame.Framework.WinFormsGamePlatform(game);
+            if (MonoGame.Framework.WindowsDeviceConfig.UseForm)
+            {
+                return new MonoGame.Framework.WinFormsGamePlatform(game);
+            }
+            else
+            {
+                return new MonoGame.Framework.WpfGamePlatform(game);
+            }
+            
 #elif WINDOWS_PHONE
             return new MonoGame.Framework.WindowsPhone.WindowsPhoneGamePlatform(game);
 #elif WINRT

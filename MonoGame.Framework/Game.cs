@@ -712,7 +712,14 @@ namespace Microsoft.Xna.Framework
 #if LINUX || (WINDOWS && OPENGL)
             ((OpenTKGamePlatform)Platform).ResetWindowBounds(changed);
 #elif WINDOWS && DIRECTX
-            ((MonoGame.Framework.WinFormsGamePlatform)Platform).ResetWindowBounds(changed);
+            if (MonoGame.Framework.WindowsDeviceConfig.UseForm)
+            {
+                ((MonoGame.Framework.WinFormsGamePlatform)Platform).ResetWindowBounds(changed);
+            }
+            else
+            {
+                ((MonoGame.Framework.WpfGamePlatform)Platform).ResetWindowBounds(changed);
+            }
 #endif
         }
 

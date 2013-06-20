@@ -385,6 +385,8 @@
     <Compile Include="Windows\WinFormsGameForm.cs" />
     <Compile Include="Windows\WinFormsGamePlatform.cs" />
     <Compile Include="Windows\WinFormsGameWindow.cs" />
+    <Compile Include="Windows\WpfElementGameWindow.cs" />
+    <Compile Include="Windows\WpfGamePlatform.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
